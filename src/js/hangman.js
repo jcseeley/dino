@@ -1,20 +1,29 @@
-let myArray = ["d", "i", "n", "o", "s", "a", "u", "r", "u", "s"]
-let newArray = [];
-myArray.forEach((letter, i) => {
-  if (myArray[i].includes("s")) {
-    newArray.push("s");
-  } else {
-  newArray.push("_")
-  }
-})
+("#letter").click(() => {
+  let myArray = ["d", "i", "n", "o", "s", "a", "u", "r", "u", "s"];
+  let newArray = [];
+  let myVar = $("input").val();
+  console.log(myVar);
+  myArray.forEach((letter, i) => {
+    if (myArray[i].includes(myVar)) {
+      newArray.push(myVar);
+    } else {
+    newArray.push("_")
+    }
+  })
 console.log(newArray);
+})
 
 
 
 // let myArray = ["d", "i", "n", "o", "s", "a", "u", "r", "u", "s"]
 // let newArray = [];
-// myArray.forEach(() => {
-//   newArray.push("_");
+
+// myArray.forEach((letter, i) => {
+//   if (myArray[i].includes("s")) {
+//     newArray.push("s");
+//   } else {
+//   newArray.push("_")
+//   }
 // })
 // console.log(newArray);
 
