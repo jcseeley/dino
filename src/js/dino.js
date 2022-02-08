@@ -1,4 +1,17 @@
 export default class Dino {  
+  constructor() {
+    this.dinoArray = [];
+    this.blankArray = [];
+  }
+
+  letterCheck(myVar) {
+    this.dinoArray.forEach((letter, i) => {
+      if (this.dinoArray[i].includes(myVar)) {
+        this.blankArray.splice(i, 1, myVar);
+      }
+    });
+  }
+
   static getWord() {
     return new Promise(function(resolve, reject) {
       let request = new XMLHttpRequest();

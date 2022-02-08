@@ -1,18 +1,20 @@
-("#letter").click(() => {
-  let myArray = ["d", "i", "n", "o", "s", "a", "u", "r", "u", "s"];
-  let newArray = [];
-  let myVar = $("input").val();
-  console.log(myVar);
-  myArray.forEach((letter, i) => {
-    if (myArray[i].includes(myVar)) {
-      newArray.push(myVar);
-    } else {
-    newArray.push("_")
-    }
-  })
-console.log(newArray);
-})
-
+// $(document).ready(function() {
+//   ("#letter").submit((event) => {
+//     event.preventDefault();
+//     let myArray = ["d", "i", "n", "o", "s", "a", "u", "r", "u", "s"];
+//     let newArray = [];
+//     let myVar = $("input").val();
+//     console.log(myVar);
+//     myArray.forEach((letter, i) => {
+//       if (myArray[i].includes(myVar)) {
+//         newArray.push(myVar);
+//       } else {
+//       newArray.push("_")
+//       }
+//     })
+// console.log(newArray);
+//   })
+// })
 
 
 // let myArray = ["d", "i", "n", "o", "s", "a", "u", "r", "u", "s"]

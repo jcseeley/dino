@@ -5,24 +5,33 @@ import './css/styles.css';
 import Dino from './js/dino.js';
 
 $(document).ready(function() {
+  let newDino = new Dino();
   $('#game').click(function() {
-    $(".blankSpaces").empty();
+    newDino.dinoArray = [];
+    newDino.blankArray = [];
     let promise = Dino.getWord();
-    
     promise.then(function(response) {
-      let myArray = [];
       const data = JSON.parse(response);
-      let myDino = data[0][0].split("");
-      myDino.forEach(function() {
-        $(".blankSpaces").append('<li>' + "_ " + '</li>'); 
-        myArray.push("_");
+      let myDino = data[0][0].toLowerCase().split("");
+      myDino.forEach(function(letter) { 
+        newDino.dinoArray.push(letter);
+        newDino.blankArray.push(' _ ');
+        $("#showArray").html(newDino.blankArray);
       });
-      console.log(myDino);
-      console.log(myArray);
-      return myDino;
+      console.log(newDino.dinoArray);
+      console.log(newDino.blankArray);
     }, function(error) {
       $('.showErrors').text(`There was an error processing your request: ${error}`);
     });
+  });
+
+  $("#letter").click((event) => {
+    event.preventDefault();
+    let myVar = $("input").val();
+    newDino.letterCheck(myVar);
+    $("#showArray").html(newDino.blankArray);
+    console.log(newDino.dinoArray);
+    console.log(newDino.blankArray);
   });
 });
 
