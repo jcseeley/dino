@@ -1,4 +1,4 @@
-export default class dino {  
+export default class Dino {  
   static getWord() {
     return new Promise(function(resolve, reject) {
       let request = new XMLHttpRequest();
@@ -9,7 +9,7 @@ export default class dino {
         } else {
           reject(request.response);
         }
-      }
+      };
       request.open("GET", url, true);
       request.send();
     });
