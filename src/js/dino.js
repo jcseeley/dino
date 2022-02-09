@@ -5,14 +5,6 @@ export default class Dino {
     this.turnCount = 8;
   }
 
-  // letterCheck(myVar) {
-  //   this.dinoArray.forEach((letter, i) => {
-  //     if (this.dinoArray[i].includes(myVar)) {
-  //       this.blankArray.splice(i, 1, myVar);
-  //     } 
-  //   });
-  // }
-
   letterCheck(myVar) {
     if (this.dinoArray.includes(myVar)) {
       this.dinoArray.forEach((letter, i) => {
@@ -32,7 +24,6 @@ export default class Dino {
     }
   }
     
-
   static getWord() {
     return new Promise(function(resolve, reject) {
       let request = new XMLHttpRequest();
