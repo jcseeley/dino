@@ -16,8 +16,9 @@ $(document).ready(function() {
       myDino.forEach(function(letter) { 
         newDino.dinoArray.push(letter);
         newDino.blankArray.push(' _ ');
-        $("#showArray").html(newDino.blankArray);
       });
+      $("#showArray").html(newDino.blankArray);
+      $("#showTurns").html(newDino.turnCount);
       console.log(newDino.dinoArray);
       console.log(newDino.blankArray);
     }, function(error) {
@@ -29,7 +30,9 @@ $(document).ready(function() {
     event.preventDefault();
     let myVar = $("input").val();
     newDino.letterCheck(myVar);
+    newDino.checkCount();
     $("#showArray").html(newDino.blankArray);
+    $("#showTurns").html(newDino.turnCount);
     console.log(newDino.dinoArray);
     console.log(newDino.blankArray);
   });
