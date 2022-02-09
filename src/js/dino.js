@@ -3,6 +3,7 @@ export default class Dino {
     this.dinoArray = [];
     this.blankArray = [];
     this.turnCount = 8;
+    this.lettersGuessed = [];
   }
 
   letterCheck(myVar) {
@@ -14,7 +15,6 @@ export default class Dino {
       });
     } else {
       this.turnCount --;
-      console.log(this.turnCount);
     }
   }
 
