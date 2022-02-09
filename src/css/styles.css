@@ -1,12 +1,11 @@
-ul li {
-  display: inline;
-  font-size: 100px;
-}
-
 img {
   width: 45%;
 }
 
 #showArray {
-  font-size: 100px;
+  font-size: 75px;
+}
+
+#turns {
+  display: none;
 }

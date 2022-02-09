@@ -9,6 +9,9 @@ $(document).ready(function() {
   $('#game').click(function() {
     newDino.dinoArray = [];
     newDino.blankArray = [];
+    newDino.turnCount = 8;
+    newDino.lettersGuessed = [];
+    $("#showLetters").html(newDino.lettersGuessed);
     let promise = Dino.getWord();
     promise.then(function(response) {
       const data = JSON.parse(response);
@@ -19,22 +22,21 @@ $(document).ready(function() {
       });
       $("#showArray").html(newDino.blankArray);
       $("#showTurns").html(newDino.turnCount);
-      console.log(newDino.dinoArray);
-      console.log(newDino.blankArray);
-    }, function(error) {
-      $('.showErrors').text(`There was an error processing your request: ${error}`);
+      $("#turns").show();
+    }, function() {
+      $('.showErrors').text(`There was an error processing your request`);
     });
   });
 
   $("#letter").click((event) => {
     event.preventDefault();
     let myVar = $("input").val();
+    newDino.lettersGuessed.push(myVar + ', ');
     newDino.letterCheck(myVar);
     newDino.checkCount();
     $("#showArray").html(newDino.blankArray);
     $("#showTurns").html(newDino.turnCount);
-    console.log(newDino.dinoArray);
-    console.log(newDino.blankArray);
+    $("#showLetters").html(newDino.lettersGuessed);
+    $("input").val("");
   });
 });
-
